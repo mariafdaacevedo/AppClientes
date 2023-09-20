@@ -13,5 +13,8 @@ public class AppClientes {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+        
+        Formulario form = new Formulario();
+        form.show();
     }
 }
