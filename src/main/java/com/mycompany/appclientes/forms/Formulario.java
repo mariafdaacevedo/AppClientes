@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.appclientes;
+package com.mycompany.appclientes.forms;
 
+import com.mycompany.appclientes.dao.ClientDao;
+import com.mycompany.appclientes.models.Client;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -44,6 +46,7 @@ public class Formulario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         costumerList = new javax.swing.JList<>();
         cleanButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +72,13 @@ public class Formulario extends javax.swing.JFrame {
         cleanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cleanButtonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -107,6 +117,10 @@ public class Formulario extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(saveButton)
                         .addGap(74, 74, 74))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +148,9 @@ public class Formulario extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(saveButton)
                             .addComponent(cleanButton))))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jButton1)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,6 +180,11 @@ public class Formulario extends javax.swing.JFrame {
        updateList();
         JOptionPane.showMessageDialog(rootPane, "Deleted correctly! " + indice);
     }//GEN-LAST:event_cleanButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ClientDao dao = new ClientDao();
+        dao.dataBaseConnection();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void updateList(){
         DefaultListModel data = new DefaultListModel();
@@ -219,6 +240,7 @@ public class Formulario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cleanButton;
     private javax.swing.JList<String> costumerList;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

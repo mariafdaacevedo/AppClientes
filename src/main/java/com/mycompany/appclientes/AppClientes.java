@@ -5,6 +5,8 @@
 
 package com.mycompany.appclientes;
 
+import com.mycompany.appclientes.forms.Formulario;
+
 /**
  *
  * @author Maria Fernanda
